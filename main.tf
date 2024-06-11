@@ -25,10 +25,6 @@ provider "aws" {
 resource "aws_s3_bucket" "state_bucket" {
   bucket = "${var.reverse_fqdn}.terraform"
 }
-resource "aws_s3_bucket_acl" "acl" {
-  bucket = aws_s3_bucket.state_bucket.bucket
-  acl    = "private"
-}
 resource "aws_s3_bucket_versioning" "versioning" {
   bucket = aws_s3_bucket.state_bucket.bucket
   versioning_configuration {
