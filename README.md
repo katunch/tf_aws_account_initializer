@@ -18,7 +18,6 @@ This Terraform was validated using [Trivy](https://aquasecurity.github.io/trivy/
 - Bucket logging is disabled.
 - Point-in-time recovery is not enabled since it's just a terraform state which can be changed by terraform itself.
 
-
 ## Requirements
 
 | Name | Version |
@@ -52,6 +51,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_assume_role_arn"></a> [assume\_role\_arn](#input\_assume\_role\_arn) | The ARN of the role to assume | `string` | `null` | no |
 | <a name="input_aws_default_tags"></a> [aws\_default\_tags](#input\_aws\_default\_tags) | The default tags to apply to all resources | `map(string)` | `{}` | no |
+| <a name="input_aws_profile"></a> [aws\_profile](#input\_aws\_profile) | The AWS profile to use | `string` | `"default"` | no |
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region to deploy resources | `string` | `"eu-central-1"` | no |
 | <a name="input_fqdn"></a> [fqdn](#input\_fqdn) | The FQDN of the Route 53 zone | `string` | n/a | yes |
 | <a name="input_reverse_fqdn"></a> [reverse\_fqdn](#input\_reverse\_fqdn) | The reverse FQDN of the Route 53 zone | `string` | n/a | yes |
