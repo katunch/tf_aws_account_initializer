@@ -1,23 +1,26 @@
 terraform {
   required_providers {
     aws = {
-      source                = "hashicorp/aws"
-      version               = "~> 5"
+      source  = "hashicorp/aws"
+      version = "~> 5"
     }
   }
 }
 
 provider "aws" {
   region = var.aws_region
-  assume_role {
-    role_arn     = var.assume_role_arn
-    session_name = "Terraform"
+  dynamic "assume_role" {
+    for_each = var.assume_role_arn != null ? [1] : []
+    content {
+      role_arn     = var.assume_role_arn
+      session_name = "Terraform"
+    }
   }
   default_tags {
-    tags = {
+    tags = merge(var.aws_default_tags, {
       "Terraform" = "true"
-      "TF_MODULE" = "tf_aws_account_initializer"
-    }
+      "TF_MODULE_REPO" = "https://github.com/katunch/tf_aws_account_initializer"
+    })
   }
 }
 
