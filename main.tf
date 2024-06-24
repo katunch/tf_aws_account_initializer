@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  region = var.aws_region
+  region  = var.aws_region
   profile = var.aws_profile
   dynamic "assume_role" {
     for_each = var.assume_role_arn != null ? [1] : []
@@ -19,7 +19,7 @@ provider "aws" {
   }
   default_tags {
     tags = merge(var.aws_default_tags, {
-      "Terraform" = "true"
+      "Terraform"      = "true"
       "TF_MODULE_REPO" = "https://github.com/katunch/tf_aws_account_initializer"
     })
   }

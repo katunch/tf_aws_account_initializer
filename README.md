@@ -60,6 +60,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_name_servers"></a> [name\_servers](#output\_name\_servers) | n/a |
-| <a name="output_state_bucket"></a> [state\_bucket](#output\_state\_bucket) | n/a |
-| <a name="output_state_lock_table"></a> [state\_lock\_table](#output\_state\_lock\_table) | n/a |
+| <a name="output_name_servers"></a> [name\_servers](#output\_name\_servers) | The name servers of the hosted zone |
+| <a name="output_route53_hosted_zone_id"></a> [route53\_hosted\_zone\_id](#output\_route53\_hosted\_zone\_id) | The ID of the hosted zone |
+| <a name="output_state_bucket"></a> [state\_bucket](#output\_state\_bucket) | The name of the state bucket |
+| <a name="output_state_lock_table"></a> [state\_lock\_table](#output\_state\_lock\_table) | The name of the state lock table |
